@@ -3,7 +3,7 @@
 /**
  * @file WebToken.hpp
  *
- * This module declares the Json::WebToken class.
+ * This module declares the WebToken::WebToken class.
  *
  * © 2019 by Richard Walters
  */
@@ -15,7 +15,7 @@
 #include <string>
 #include <vector>
 
-namespace Json {
+namespace WebToken {
 
     /**
      * This class represents a JSON Web Token (JWT), as specified
@@ -56,7 +56,7 @@ namespace Json {
          * @return
          *     The header of the JWT is returned.
          */
-        Value GetHeader() const;
+        Json::Value GetHeader() const;
 
         /**
          * Return the payload of the JWT.
@@ -64,7 +64,7 @@ namespace Json {
          * @return
          *     The payload of the JWT is returned.
          */
-        Value GetPayload() const;
+        Json::Value GetPayload() const;
 
         /**
          * Return the signature of the JWT.

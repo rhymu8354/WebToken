@@ -1,18 +1,19 @@
 /**
  * @file WebToken.cpp
  *
- * This module contains the implementation of the Json::WebToken class.
+ * This module contains the implementation of the WebToken::WebToken class.
  *
- * © 2018 by Richard Walters
+ * © 2019 by Richard Walters
  */
 
 #include <Base64/Base64.hpp>
-#include <Json/WebToken.hpp>
+#include <Json/Value.hpp>
+#include <WebToken/WebToken.hpp>
 #include <stdint.h>
 #include <string>
 #include <vector>
 
-namespace Json {
+namespace WebToken {
 
     /**
      * This contains the private properties of a WebToken instance.
@@ -28,13 +29,13 @@ namespace Json {
          * This is the first part of the JWT, which describes what it is
          * and how it's signed (if it's signed).
          */
-        Value header;
+        Json::Value header;
 
         /**
          * This is the main body of the JWT.  In the case of OpenID Connect,
          * this would be the set of claims embodied in the token.
          */
-        Value payload;
+        Json::Value payload;
 
         /**
          * This is the last part of the JWT, typically containing the
@@ -109,11 +110,11 @@ namespace Json {
         return impl_->data;
     }
 
-    Value WebToken::GetHeader() const {
+    Json::Value WebToken::GetHeader() const {
         return impl_->header;
     }
 
-    Value WebToken::GetPayload() const {
+    Json::Value WebToken::GetPayload() const {
         return impl_->payload;
     }
 

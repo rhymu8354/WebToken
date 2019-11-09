@@ -1,12 +1,11 @@
-# CMakeLists.txt for JsonTests
+# CMakeLists.txt for WebTokenTests
 #
-# © 2018 by Richard Walters
+# © 2019 by Richard Walters
 
 cmake_minimum_required(VERSION 3.8)
-set(This JsonTests)
+set(This WebTokenTests)
 
 set(Sources
-    src/ValueTests.cpp
     src/WebTokenTests.cpp
 )
 
@@ -20,7 +19,7 @@ target_include_directories(${This} PRIVATE ..)
 target_link_libraries(${This} PUBLIC
     gtest_main
     Json
-    SystemAbstractions
+    WebToken
 )
 
 add_test(

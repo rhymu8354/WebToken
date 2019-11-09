@@ -1,17 +1,15 @@
-# CMakeLists.txt for Json
+# CMakeLists.txt for WebToken
 #
-# © 2018 by Richard Walters
+# © 2019 by Richard Walters
 
 cmake_minimum_required(VERSION 3.8)
-set(This Json)
+set(This WebToken)
 
 set(Headers
-    include/Json/Value.hpp
-    include/Json/WebToken.hpp
+    include/WebToken/WebToken.hpp
 )
 
 set(Sources
-    src/Value.cpp
     src/WebToken.cpp
 )
 
@@ -24,8 +22,8 @@ target_include_directories(${This} PUBLIC include)
 
 target_link_libraries(${This} PUBLIC
     Base64
+    Json
     SystemAbstractions
-    Utf8
 )
 
 add_subdirectory(test)

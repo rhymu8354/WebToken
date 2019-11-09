@@ -1,23 +1,32 @@
 # Json
 
-This is a library which implements [RFC 7159](https://tools.ietf.org/html/rfc7159),
-"The JavaScript Object Notation (JSON) Data Interchange Format".
+This is a library which implements
+[RFC 7519](https://tools.ietf.org/html/rfc7519), "JSON Web Token (JWT)".
 
 ## Usage
 
-The `Json::Json` class is a utility for reading and writing strings of data in the JavaScript Object Notation (JSON) format.  It can parse a complete data structure from a JSON string, or generate a JSON string from a data structure.
+The `WebToken::WebToken` class represents a JSON Web Token (JWT).  One may be
+constructed from an encoded JWT and used to extract the various parts of the
+JWT, such as the header, payload, and signature.
 
 ## Supported platforms / recommended toolchains
 
-This is a portable C++11 library which depends only on the C++11 compiler and standard library, so it should be supported on almost any platform.  The following are recommended toolchains for popular platforms.
+This is a portable C++11 library which depends on the C++11 compiler, standard
+library, and the [Base64](https://github.com/rhymu8354/Base64.git) and
+[Json](https://github.com/rhymu8354/Json.git) libraries.  It should be
+supported on almost any platform.  The following are recommended toolchains for
+popular platforms.
 
-* Windows -- [Visual Studio](https://www.visualstudio.com/) (Microsoft Visual C++)
+* Windows -- [Visual Studio](https://www.visualstudio.com/)
+  (Microsoft Visual C++)
 * Linux -- clang or gcc
 * MacOS -- Xcode (clang)
 
 ## Building
 
-This library is not intended to stand alone.  It is intended to be included in a larger solution which uses [CMake](https://cmake.org/) to generate the build system and build applications which will link with the library.
+This library is not intended to stand alone.  It is intended to be included in
+a larger solution which uses [CMake](https://cmake.org/) to generate the build
+system and build applications which will link with the library.
 
 There are two distinct steps in the build process:
 
@@ -30,17 +39,16 @@ There are two distinct steps in the build process:
   implements encoding and decoding data using the Base64 algorithm, which
   is defined in [RFC 4648](https://tools.ietf.org/html/rfc4648).
 * [CMake](https://cmake.org/) version 3.8 or newer
-* C++11 toolchain compatible with CMake for your development platform (e.g. [Visual Studio](https://www.visualstudio.com/) on Windows)
-* [SystemAbstractions](https://github.com/rhymu8354/SystemAbstractions.git) - a
-  cross-platform adapter library for system services whose APIs vary from one
-  operating system to another
-* [Utf8](https://github.com/rhymu8354/Utf8.git) - a library which implements
-  [RFC 3629](https://tools.ietf.org/html/rfc3629), "UTF-8 (Unicode
-  Transformation Format)".
+* C++11 toolchain compatible with CMake for your development platform
+  (e.g. [Visual Studio](https://www.visualstudio.com/) on Windows)
+* [Json](https://github.com/rhymu8354/Json.git) - a library which implements
+  [RFC 7159](https://tools.ietf.org/html/rfc7159), "The JavaScript Object
+  Notation (JSON) Data Interchange Format".
 
 ### Build system generation
 
-Generate the build system using [CMake](https://cmake.org/) from the solution root.  For example:
+Generate the build system using [CMake](https://cmake.org/) from the solution
+root.  For example:
 
 ```bash
 mkdir build
