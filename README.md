@@ -1,4 +1,4 @@
-# Json
+# WebToken
 
 This is a library which implements
 [RFC 7519](https://tools.ietf.org/html/rfc7519), "JSON Web Token (JWT)".
